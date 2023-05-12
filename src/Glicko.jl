@@ -21,7 +21,7 @@ function glicko(r, RD, sjs, rjs, RDjs; c)
         return r, RD
     else
         RD = min(350.0, sqrt(RD^2 + c^2))
-        d² = 1 / q^2 / sum(@. g(RDjs) * E(r, rjs, RDjs) * (1 - E(r, rjs, RDjs)))
+        d² = 1 / q^2 / sum(@. g(RDjs)^2 * E(r, rjs, RDjs) * (1 - E(r, rjs, RDjs)))
         RD′ = 1 / sqrt(1 / RD^2 + 1 / d²)
         r′ = r + q * RD′^2 * sum(@. g(RDjs) * (sjs - E(r, rjs, RDjs)))
         return r′, RD′
