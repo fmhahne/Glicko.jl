@@ -1,11 +1,11 @@
-name = "Glicko"
+name = "Ratings"
 uuid = "00770c93-6ee5-40d7-9659-5e965860069a"
 authors = ["Fernando Miguel Hahne <fernandomhahne@gmail.com>"]
-version = "0.1.0"
+version = "0.2.0"
 
 [deps]
 Roots = "f2b01f46-fcfa-551c-844a-d8ac1e96c665"
 
 [compat]
-Roots = "2.0"
+Roots = "2.1"
 julia = "1.6"

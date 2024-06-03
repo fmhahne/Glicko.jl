@@ -1,8 +1,13 @@
-module Glicko
+module Ratings
 
 using Roots
 
-export glicko, glicko2
+export elo, glicko, glicko2
+
+function elo(r, sjs, rjs; k)
+    expected = sum(@. 1 / (1 + 10^(-(r - rjs) / 400)))
+    return r + k * (sum(sjs) - expected)
+end
 
 const q = log(10) / 400
 
